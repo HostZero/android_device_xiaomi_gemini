@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+ROOTDIR := device/xiaomi/gemini/rootdir/etc
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/xiaomi/gemini/gemini-vendor.mk)
@@ -236,3 +236,22 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
+
+PRODUCT_COPY_FILES += \
+    $(ROOTDIR)/fstab.qcom:recovery/root/fstab.qcom \
+    $(ROOTDIR)/hsic.control.bt.sh:recovery/root/hsic.control.bt.sh \
+    $(ROOTDIR)/init.class_main.sh:recovery/root/init.class_main.sh \
+    $(ROOTDIR)/init.leds.sh:recovery/root/init.leds.sh \
+    $(ROOTDIR)/init.qcom.bt.sh:recovery/root/init.qcom.bt.sh \
+    $(ROOTDIR)/init.qcom.early_boot.sh:recovery/root/init.qcom.early_boot.sh \
+    $(ROOTDIR)/init.qcom.post_boot.sh:recovery/root/init.qcom.post_boot.sh \
+    $(ROOTDIR)/init.qcom.rc:recovery/root/init.qcom.rc \
+    $(ROOTDIR)/init.qcom.sensors.sh:recovery/root/init.qcom.sensors.shc \
+    $(ROOTDIR)/init.qcom.sh:recovery/root/init.qcom.sh \
+    $(ROOTDIR)/init.qcom.ssr.sh:recovery/root/init.qcom.ssr.sh \
+    $(ROOTDIR)/init.qcom.usb.rc:recovery/root/init.qcom.usb.rc \
+    $(ROOTDIR)/init.qcom.usb.sh:recovery/root/init.qcom.usb.sh \
+    $(ROOTDIR)/init.target.rc:recovery/root/init.target.rc \
+    $(ROOTDIR)/ueventd.qcom.rc:recovery/root/ueventd.qcom.rc \
+    $(ROOTDIR)/usf_post_boot.sh:recovery/root/usf_post_boot.sh \
+    $(ROOTDIR)/usf_settings.sh:recovery/root/usf_settings.sh \
